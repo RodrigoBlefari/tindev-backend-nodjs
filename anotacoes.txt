@@ -1,0 +1,11 @@
+1 - yarn init -y //cria package.json
+2 - yarn add express //microframework do node que ajuda com rotas e requisicoes do servidor
+3 - yarn add nodemon -D // deixa a edicao e tempo real ativa para nao ter que ficar executando e parando o node. -D(So roda em dev)
+4 - Cria script para facilitar no prompt:
+      "scripts": {
+ 
+    "dev": "nodemon src/server.js"
+
+  },
+5 - yarn add mongoose //ODM ferramenta para facilitar o trabalho com banco usando javascript 
+6 - yarn add axios // pacotes para fazer requisicoes em apis externas
