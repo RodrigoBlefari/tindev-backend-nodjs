@@ -11,7 +11,7 @@ module.exports = {
         const targetDev = await Dev.findById(devId)
 
         if (!loggedDev) return res.status(400).json({ error: 'Logged user not exist' })
-      
+
         if (!targetDev) return res.status(400).json({ error: 'Target user not exist' })
 
         if (targetDev.likes.includes(loggedDev._id)) {

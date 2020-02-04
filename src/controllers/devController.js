@@ -5,14 +5,14 @@ module.exports = {
 
     async index(req, res) {
 
-        const {user} = req.headers
+        const { user } = req.headers
 
         const loggedDev = await Dev.findById(user)
 
         const users = await Dev.find({
             $and: [
                 { _id: { $ne: user } },
-                { _id: { $nin: loggedDev.likes} },
+                { _id: { $nin: loggedDev.likes } },
                 { _id: { $nin: loggedDev.dislikes } }
             ]
         })
@@ -26,7 +26,7 @@ module.exports = {
         const userExists = await Dev.findOne({ user: username })
 
         if (userExists) {
-            return res.json({userExists, retorno : 'usuario ja existe'})
+            return res.json({ userExists, retorno: 'usuario ja existe' })
         }
 
         const response = await axios.get(`https://api.github.com/users/${username}`)
