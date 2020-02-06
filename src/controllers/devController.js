@@ -8,7 +8,7 @@ module.exports = {
         const { user } = req.headers
 
         const loggedDev = await Dev.findById(user)
-        return res.json(loggedDev)
+       
         const users = await Dev.find({
             $and: [
                 { _id: { $ne: user } },
