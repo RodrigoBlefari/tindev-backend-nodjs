@@ -8,7 +8,6 @@ module.exports = {
         const loggedDev = await Dev.findById(user)
         const targetDev = await Dev.findById(devId)
 
-        console.log(loggedDev)
         if (!loggedDev) return res.status(400).json({ error: 'Logged user not exist' })
 
         if (!targetDev) return res.status(400).json({ error: 'Target user not exist' })
